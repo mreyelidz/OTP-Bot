@@ -15,7 +15,7 @@ pip install -U discord-py-interactions
 ## Setup
 
 1.Download ngrok (you can watch youtube)\
-2.make ngrok tunnel with 5000 port\
+2.make ngrok tunnel with port 5000\
 3.make otp.txt (empty txt file)\
 4.make status.txt (empty txt file)\
 5.make Extra folder\
