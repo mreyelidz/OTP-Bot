@@ -7,6 +7,7 @@
 - Need Verified Twilio Acc to work
 - Planning to make OTP Bot for Vonage
 - https://cracked.io/NamiWoiiii
+- https://patched.to/User/nami
 - https://discord.gg/dm96sgkafP
 
 ## Installation
