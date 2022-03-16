@@ -31,4 +31,4 @@ pip install -U discord-py-interactions
 9.run bot.py\
 10.go into discord and use /call
 
-![](https://imgur.com/5FoweFz)
+![](https://i.imgur.com/5FoweFz.jpg)
