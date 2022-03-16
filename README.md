@@ -1,6 +1,10 @@
-# OTP Bot
+![](https://dcbadge.vercel.app/api/shield/423747377506025472)
 
-Python OTP Bot (required twilio upgraded acc..buying one (Im4N x de azam tahun baru#7789))
+### Note
+- Not for sell only  for personal use...You can remake it
+- Only for Base/Example and then make your own otp bot
+- Only work for Twilio
+- Planning to make OTP Bot for Vonage
 
 ## Installation
 
