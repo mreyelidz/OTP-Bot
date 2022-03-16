@@ -47,3 +47,9 @@ pip install -U discord-py-interactions
 \
 
 ![](https://i.imgur.com/5FoweFz.jpg)
+
+### Donate
+- LTC
+   - LSwXv1XA3ozJW3rNnGZ9RzVqFsv3GHzPCi
+- BTC
+   - bc1qrmsa6uew8r7h7t37jrwss4wrh54chxqsc7hss6
