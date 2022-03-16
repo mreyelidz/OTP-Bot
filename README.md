@@ -4,6 +4,7 @@
 - Not for sell only  for personal use...You can remake it
 - Only for Base/Example and then make your own otp bot
 - Only work for Twilio
+- Need Verified Twilio Acc to work
 - Planning to make OTP Bot for Vonage
 
 ## Installation
