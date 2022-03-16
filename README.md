@@ -30,3 +30,5 @@ pip install -U discord-py-interactions
 7.run voice_response.py (you can edit the script)\
 9.run bot.py\
 10.go into discord and use /call
+
+![](https://imgur.com/5FoweFz)
