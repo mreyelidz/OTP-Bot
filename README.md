@@ -39,7 +39,7 @@ pip install -U discord-py-interactions
 \
 9.run voice_response.py (you can edit the script)\
 \
-10.Replace guild id with ur server if in the bot.py\
+10.Replace guild id with ur server id in the bot.py\
 \
 11.Give enough permission to the bot\
 \
