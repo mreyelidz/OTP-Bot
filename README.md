@@ -28,27 +28,17 @@ pip install -U discord-py-interactions / pip install -U discord-py-slash-command
 \
 2.make ngrok tunnel with port 5000\
 \
-3.make otp.txt (empty txt file)\
+3.fill the config.txt
 \
-4.make status.txt (empty txt file)\
+4.replace bot token in bot.py\
 \
-5.make Extra folder\
+5.run voice_response.py (you can edit the script)\
 \
-6.make Company Name.txt ,Name.txt ,and  Digits.txt in the Extra folder\
+6.Give enough permission to the bot\
 \
-7.replace bot token in bot.py\
+7.run bot.py\
 \
-8.replace twilio info in bot.py(acc sid,auth,phone number and ngrok url)\
-\
-9.run voice_response.py (you can edit the script)\
-\
-10.Replace guild id with ur server id in the bot.py\
-\
-11.Give enough permission to the bot\
-\
-12.run bot.py\
-\
-13.go into discord and use /call
+8.go into discord and use /call
 
 ![](https://i.imgur.com/5FoweFz.jpg)
 
