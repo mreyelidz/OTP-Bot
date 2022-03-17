@@ -1,6 +1,7 @@
 ![](https://dcbadge.vercel.app/api/shield/423747377506025472)
 
 ### Note
+- I make it write the otp code to otp.txt so u guys cant use it concurently...feel free to remake it ig
 - Not for sell only  for personal use...You can remake it
 - Only for Base/Example and then make your own otp bot
 - Only work for Twilio
