@@ -28,7 +28,7 @@ pip install -U discord-py-interactions / pip install -U discord-py-slash-command
 \
 2.make ngrok tunnel with port 5000\
 \
-3.fill the config.txt\
+3.fill the config.txt(run bot.py to get the config.txt)\
 \
 4.replace bot token in bot.py\
 \
