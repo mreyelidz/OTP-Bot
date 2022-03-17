@@ -9,12 +9,12 @@ import time
 client_discord = commands.Bot(command_prefix='=')
 slash = SlashCommand(client_discord, sync_commands=True)
 guild = discord.Guild
-account_sid = 'your account sid'
-auth_token = 'your auth token'
-your_twilio_phone_number = 'your twilio phone number'
-ngrok = 'your ngrok url'
+account_sid = 'Your Twilio Acc SID'#
+auth_token = 'Your Twilio Acc Auth Token'#
+your_twilio_phone_number = '+1234567890'#
+ngrok = 'https://example.ngrok.io Your Ngrok URL'#
 client = Client(account_sid, auth_token)
-server_id = 12345678990
+server_id = 953877934937096232 #Your ServerID
 
 app = Flask(__name__)
 
@@ -53,7 +53,7 @@ app = Flask(__name__)
     ]
 )
 async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=str):
-
+    await ctx.send('n')
     if open('status.txt', 'r').read() == 'busy':
         embed = discord.Embed(title='',
                               description=f'Busy...With  other call',
@@ -78,7 +78,7 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
         if client.calls(sid).fetch().status == 'queued':
             if not a >= 1:
                 embed = discord.Embed(title='', description='Queued', color=discord.Colour.green())
-                await ctx.send(embed=embed)
+                await ctx.channel.send(embed=embed)
                 a = a + 1
         elif client.calls(sid).fetch().status == 'ringing':
             if not b >= 1:
@@ -179,7 +179,7 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
     call = client.calls.create(
         url=f'{ngrok}/voiceagain',
         to=f'{phone}',
-        from_='+13344633251'
+        from_=your_twilio_phone_number
     )
     sid = call.sid
     a = 0
@@ -244,6 +244,5 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
     open('status.txt', 'w').close()
 
 client_discord.run(
-    'discord_token'
+    '' #Your Token
 )
-
