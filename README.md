@@ -2,6 +2,7 @@
 
 ### Note
 - I make it write the otp code to otp.txt so u guys cant use it concurently...feel free to remake it ig
+- If you have any problem u can contact me
 - Not for sell only  for personal use...You can remake it
 - Only for Base/Example and then make your own otp bot
 - Only work for Twilio
