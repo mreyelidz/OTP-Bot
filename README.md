@@ -53,16 +53,16 @@ pip install -U discord-py-interactions / pip install -U discord-py-slash-command
 ### Discord Bot Note
 - Call
     - Digits
-     - OTP Code Digits Amount
+          - OTP Code Digits Amount
 
     - Phone Number
-     - Target's Phone Number
+          - Target's Phone Number
 
    - Name
-    - Target's Name
+         - Target's Name
 
    - Company Name
-    - Company's Name
+         - Company's Name
 
 - Call Again
    - If the call failed
