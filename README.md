@@ -26,7 +26,7 @@ pip install -U discord-py-interactions / pip install -U discord-py-slash-command
 
 1.Download ngrok (you can watch youtube)\
 \
-2.make ngrok tunnel with port 5000\
+2.make ngrok tunnel with ngrok http 5000 or ngrok http 127.0.0.1:5000\
 \
 3.fill the config.txt(run bot.py to get the config.txt)\
 \
