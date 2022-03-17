@@ -1,7 +1,6 @@
 ![](https://dcbadge.vercel.app/api/shield/423747377506025472)
 
 ### Note
-- I make it write the info to txt file so u guys cant use it concurently...feel free to remake it ig
 - If you have any problem u can contact me
 - Not for sell only  for personal use...You can remake it
 - Only for Base/Example and then make your own otp bot
