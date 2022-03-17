@@ -50,6 +50,23 @@ pip install -U discord-py-interactions / pip install -U discord-py-slash-command
 
 ![](https://i.imgur.com/5FoweFz.jpg)
 
+### Discord Bot Note
+- Call
+- Digits
+    - OTP Code Digits Amount
+
+ - Phone Number
+    - Target's Phone Number
+
+- Name
+   - Target's Name
+
+- Company Name
+   - Company's Name
+
+- Call Again
+   - If the call failed
+
 ### Donate
 - LTC
    - LSwXv1XA3ozJW3rNnGZ9RzVqFsv3GHzPCi
