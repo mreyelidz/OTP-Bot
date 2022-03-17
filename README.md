@@ -47,7 +47,6 @@ pip install -U discord-py-interactions / pip install -U discord-py-slash-command
 12.run bot.py\
 \
 13.go into discord and use /call
-\
 
 ![](https://i.imgur.com/5FoweFz.jpg)
 
