@@ -30,15 +30,13 @@ pip install -U discord-py-interactions / pip install -U discord-py-slash-command
 \
 3.fill the config.txt(run bot.py to get the config.txt)\
 \
-4.replace bot token in bot.py\
+4.run voice_response.py (you can edit the script)\
 \
-5.run voice_response.py (you can edit the script)\
+5.Give enough permission to the bot\
 \
-6.Give enough permission to the bot\
+6.run bot.py\
 \
-7.run bot.py\
-\
-8.go into discord and use /call
+7.go into discord and use /call
 
 ![](https://i.imgur.com/5FoweFz.jpg)
 
