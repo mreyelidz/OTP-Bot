@@ -17,7 +17,7 @@ if not 'otp.txt' in os.listdir():
 if not 'Extra' in os.listdir():
     os.mkdir('Extra')
 if not 'Company Name.txt' in os.listdir('Extra'):
-    open('Extra/Company Name', 'w').close()
+    open('Extra/Company Name.txt', 'w').close()
 if not 'Digits.txt' in os.listdir('Extra'):
     open('Extra/Digits.txt', 'w').close()
 if not 'Name.txt' in os.listdir('Extra'):
