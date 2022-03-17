@@ -54,7 +54,7 @@ app = Flask(__name__)
 )
 async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=str):
 
-    if open('status.txt', 'r') == 'busy':
+    if open('status.txt', 'r').read() == 'busy':
         embed = discord.Embed(title='',
                               description=f'Busy...With  other call',
                               color=discord.Colour.red())
