@@ -10,8 +10,6 @@ import json
 
 if not 'Config.txt' in os.listdir():
     open('Config.txt', 'w').write('{"account_sid":"", "auth_token":"", "Twilio Phone Number":"+123456789", "ngrok_url":"https://example.ngrok.io", "server_id":"", "bot_token":""}')
-if not 'status.txt' in os.listdir():
-    open('status.txt',  'w').close()
 if not 'otp.txt' in os.listdir():
     open('otp.txt', 'w').close()
 if not 'Extra' in os.listdir():
@@ -71,14 +69,7 @@ app = Flask(__name__)
     ]
 )
 async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=str):
-    await ctx.send('n')
-    if open('status.txt', 'r').read() == 'busy':
-        embed = discord.Embed(title='',
-                              description=f'Busy...With  other call',
-                              color=discord.Colour.red())
-        await ctx.send(embed=embed)
-    else:
-        open('status.txt', 'w').write('busy')
+    await ctx.send('Nothing Just Want To Avoid Error')
     open('Extra/Digits.txt', 'w').write(f'{digits}')
     open('Extra/Name.txt', 'w').write(f'{name}')
     open('Extra/Company Name.txt', 'w').write(f'{companyname}')
@@ -88,6 +79,7 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
         from_=f'{your_twilio_phone_number}'
     )
     sid = call.sid
+    print(sid)
     a = 0
     b = 0
     c = 0
@@ -114,41 +106,39 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
             await ctx.channel.send(embed=embed)
             break
         elif client.calls(sid).fetch().status == 'failed':
-            embed = discord.Embed(title='Just a Normal Bot', description='Failed',
+            embed = discord.Embed(title='', description='Failed',
                                   color=discord.Colour.red())
             await ctx.channel.send(embed=embed)
             break
         elif client.calls(sid).fetch().status == 'no-answer':
-            embed = discord.Embed(title='Just a Normal Bot', description='No Answer',
+            embed = discord.Embed(title='', description='No Answer',
                                   color=discord.Colour.red())
             await ctx.channel.send(embed=embed)
             break
         elif client.calls(sid).fetch().status == 'canceled':
-            embed = discord.Embed(title='Just a Normal Bot', description='Canceled',
+            embed = discord.Embed(title='', description='Canceled',
                                   color=discord.Colour.red())
             await ctx.channel.send(embed=embed)
             break
         elif client.calls(sid).fetch().status == 'busy':
-            embed = discord.Embed(title='Just a Normal Bot', description='Busy',
+            embed = discord.Embed(title='', description='Busy',
                                   color=discord.Colour.red())
             await ctx.channel.send(embed=embed)
             break
     time.sleep(1)
     otp = open(f'otp.txt', 'r').read()
     call1 = client.calls(sid).fetch()
-    print(sid)
     if otp == '':
         embed = discord.Embed(title='',
-                              description=f'No OTP \n\n\nPrice : {call1.price}\nDuration : {call1.duration} secs',
+                              description=f'No OTP\n\nPrice : {call1.price}\nDuration : {call1.duration} secs',
                               color=discord.Colour.red())
         await ctx.channel.send(embed=embed)
     else:
         embed = discord.Embed(title='',
-                              description=f'{otp}\n\n\n\nPrice : {call1.price}\nDuration : {call1.duration} secs',
+                              description=f'{otp}\n\nPrice : {call1.price}\nDuration : {call1.duration} secs',
                               color=discord.Colour.green())
         await ctx.channel.send(embed=embed)
-    open('otp.txt', 'w').write('')
-    open('status.txt', 'w').write('')
+    open('otp.txt', 'w').close()
 
 
 @slash.slash(
@@ -184,13 +174,6 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
     ]
 )
 async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=str):
-    if open('status.txt', 'r') == 'busy':
-        embed = discord.Embed(title='',
-                              description=f'Busy...With other call',
-                              color=discord.Colour.red())
-        await ctx.send(embed=embed)
-    else:
-        open('status.txt', 'w').write('busy')
     open('Extra/Digits.txt', 'w').write(f'{digits}')
     open('Extra/Name.txt', 'w').write(f'{name}')
     open('Extra/Company Name.txt', 'w').write(f'{companyname}')
@@ -200,6 +183,7 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
         from_=your_twilio_phone_number
     )
     sid = call.sid
+    print(sid)
     a = 0
     b = 0
     c = 0
@@ -226,26 +210,26 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
             await ctx.channel.send(embed=embed)
             break
         elif client.calls(sid).fetch().status == 'failed':
-            embed = discord.Embed(title='Just a Normal Bot', description='Failed',
+            embed = discord.Embed(title='', description='Failed',
                                   color=discord.Colour.red())
             await ctx.channel.send(embed=embed)
             break
         elif client.calls(sid).fetch().status == 'no-answer':
-            embed = discord.Embed(title='Just a Normal Bot', description='No Answer',
+            embed = discord.Embed(title='', description='No Answer',
                                   color=discord.Colour.red())
             await ctx.channel.send(embed=embed)
             break
         elif client.calls(sid).fetch().status == 'canceled':
-            embed = discord.Embed(title='Just a Normal Bot', description='Canceled',
+            embed = discord.Embed(title='', description='Canceled',
                                   color=discord.Colour.red())
             await ctx.channel.send(embed=embed)
             break
         elif client.calls(sid).fetch().status == 'busy':
-            embed = discord.Embed(title='Just a Normal Bot', description='Busy',
+            embed = discord.Embed(title='', description='Busy',
                                   color=discord.Colour.red())
             await ctx.channel.send(embed=embed)
             break
-    time.sleep(1)
+    time.sleep(2)
     otp = open(f'otp.txt', 'r').read()
     call1 = client.calls(sid).fetch()
     if otp == '':
@@ -259,7 +243,6 @@ async def _call(ctx=SlashContext, phone=str, digits=str, name=str, companyname=s
                               color=discord.Colour.green())
         await ctx.channel.send(embed=embed)
     open('otp.txt', 'w').close()
-    open('status.txt', 'w').close()
 
 client_discord.run(
     raw_config['bot_token']
